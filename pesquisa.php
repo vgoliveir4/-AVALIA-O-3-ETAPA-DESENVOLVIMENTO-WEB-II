@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario_id'])) {
 $user_id = $_SESSION['usuario_id'];
 $resultados = null;
 
-// Seguir / Deixar de Seguir
+
 if (isset($_GET['acao']) && isset($_GET['id_alvo'])) {
     $alvo = $_GET['id_alvo'];
 
@@ -26,7 +26,6 @@ if (isset($_GET['acao']) && isset($_GET['id_alvo'])) {
     exit;
 }
 
-// Lógica de Busca
 if (isset($_GET['busca'])) {
     $busca = $_GET['busca'];
     $sql = "SELECT id, nome, username, foto FROM usuarios WHERE (nome LIKE CONCAT('%', ?, '%') OR username LIKE CONCAT('%', ?, '%')) AND id != ? ORDER BY nome";
@@ -44,9 +43,7 @@ if (isset($_GET['busca'])) {
 <title>Pesquisar Usuários</title>
 
 <style>
-/* ==========================
-      ESTILO MODERNO
-   ========================== */
+
 
 body {
     background: #0f1419;
